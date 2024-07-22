@@ -1,0 +1,90 @@
+*****C++ NOTLARI*****
+
+Donanım(Hardware)=Klavye,fare,ekran,ana bellek,ssd disk vb...
+Yazılım(Software)=Bir bilgisayar üzerinde çalışan her türlü program.
+->sistem yazılımları:İşletim sistemleri ,derleyiciler
+->Uygulama yazılımları:Her türlü uygulama yazılımı
+
+**Değişkenler isimlendirilirken en fazla kullanılan notasyonlardan
+birisi deve notasyonudur (camel notation). Bu notasyon,
+değişken ismi birden fazla kelime içeriyorsa ilk kelime hariç
+sonraki kelimelerin ilk karakterlerinin büyük harfle yazıldığı bir
+notasyondur. enKucukSayi, bankaHesapNo gibi
+
+--> C++ da c de olduğu gibi kütüphaneler vardır.
+
+#include <iostream> // cout ve cin kullanımı için gerekli.Önişleme talimatıdır.
+c de ekrana yazdırma işlemi için printf kullanılırken burada cout(see out)kullanılır.kullanıcıdan veri almak için de scanf yerine
+cin(see in)kullanılır.
+
+#include<cstdlib> //Rakamları metinlere, metinleri rakamlara çeviren  fonksiyonların ve rastgele sayı üreten fonksiyonların 
+prototiplerini ve tanımlarını içerir. (atoi, atof, rand veya srand)gibi
+
+using namespace std; // Standart kütüphanedir eğer bunu yazmazsak yazdığımız her cout için başına std::cout diye yazmamız lazım.
+
+int main(){
+
+cout<<"Hello World\n"; // std::cout<<"Hello World"<<endl; şeklinde de yazılabilir.endl=\n analmına gelir 1 satır boşluk bırakır.
+return 0;
+}
+
+*Çift slaş içinde verilen yazıların koda hiçbir etkisi yoktur.Bunlara comment denir.Bilgi vermek amacıyla yazılan
+açıklama satırıdır.
+
+Yaygın “Kaçış Sıraları”
+
+\n : Newline (İmleci yeni bir satırın en başına
+götürür.)
+\t : Yatay tab (İmleci bir sonraki tab durağına
+götürür.)
+\r : Carriage return (İmleci mevcut satırın başına
+götürür.)
+\\ : Backslash (Ters Bölü) karakterini ekrana
+yazar.
+\" : Tırnak işaretini ekrana yazar.
+**bool veri tipi true veya false bilgisi saklamak için kullanılır.
+
+-> C++ da if ve while döngüleri C ile aynı ancak değişken tanımlamaları farklı.
+
+**  "static_cast<>" Operatörü
+
+Ortalamalar çoğu zaman integer değere sahip olmazlar.7,21 veya 8,93648 gibi float ve double değerlere sahip olabilirler.
+
+#include <iostream> // cout ve cin kullanımı için
+#include <iomanip> //setprecision kullanımı için
+
+using namespace std;
+int toplam;
+int notSayaci;
+double ortalama;
+ortalama=static_cast<double>(toplam)/notSayaci;
+//ortalama=(double)toplam/notSayaci;
+cout<<"Sinif Ortalamasi"<<setprecision(3)<<ortalama;
+
+***FONKSİYONLAR
+
+-> Fonksiyonlar isimlendirilirken en fazla kullanılan notasyonlardan birisi Paskal notasyonudur (pascal notation). 
+Bu notasyon, fonksiyon ismi birden fazla kelime içeriyorsa ilk kelime de dahil bütün kelimelerin ilk karakterlerinin 
+büyük harfle yazıldığı bir notasyondur. KaresiniAl, AsalMi, Swap gibi.
+
+**<cmath> kütüphanesi***
+
+ceil(x)=kendinden büyük ilk tam sayıya yuvarlar
+floor(x)=kendinden küçük ilk tam sayıya yuvarlar
+fabs(x)=mutlak değerini hesaplar
+fmod(x,y)=x sayısının y sayısına bölümünden kalan ondalıklı sayıyı hesaplar
+pow(x,y)=x in y.kuvvetini hesaplar x^y
+sqrt(x)=karekök hesaplar
+exp(x)=exponansiyel fonksiyon e^x
+log(x)=logaritma[e tabanında]
+log10(x)=10 tabanında log hesaplar
+sin,cos,tan(x)=radyan cinsinden trigonometrik hesaplar
+
+***Referans kullanımı***
+
+int a=10;
+int &ref=a; // referans & işareti ile gösterilir.
+ref++;
+cout<<a<<;
+
+a nın yeni değeri 11 olur.
